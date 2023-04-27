@@ -1,0 +1,48 @@
+{
+  "cv": {
+    "interests": {
+      "title": "Interests",
+      "videogames": "Videogames",
+      "boardgames": "Board Games",
+      "tv": "TV & Cinema",
+      "coding": "Coding",
+      "music": "Music"
+    },
+    "projectsTitle": "Projects",
+    "projects": {
+      "website": {
+        "title": "This website!",
+        "description": "Read this website's code on GitHub"
+      },
+      "pytimeline": {
+        "title": "PyTimeline",
+        "description": "At PyCamp 2023, a 3-day camp for python developers, I collaborated developing this board-game adaptation made with Django"
+      }
+    },
+    "aboutMe": {
+      "title": "About me",
+      "text": "I am Dario Liendo, a fullstack developer based in Córdoba, Argentina. I've been working on software since 2015. At fist I worked doing mostly web design using WordPress and making some basic functionality with JavaScript mostly for marketing purposes.\nAfter a few years, I started growing apart from the marketing world and feeling closer to software development, and so I started digging deeper on JavaScript, frameworks, and finally backend development. Now, all in all I've been developing websites and software for several years and am eager to keep expanding my carreer further."
+    },
+    "emailMeButton": "Email me!",
+    "technology": "Technology",
+    "workExperience": {
+      "title": "Work Experience",
+      "now": "now",
+      "woxi": "During my time at Woxi, I gained valuable experience working with various frameworks. Initially, I worked extensively with <strong>AngularJS</strong> before transitioning to <strong>VueJS</strong>, which has been my go-to framework since then. My expertise with these frameworks allowed me to effectively develop and maintain complex web applications.<br /> Moreover, I had the opportunity to expand my skill set by working with server-side tools like <strong>NodeJS</strong> and <strong>MongoDB</strong>, leading to a more complete understanding of the whole field.",
+      "communicationsSpecialist": "Communications Specialist",
+      "pentametrix": "At Pentametrix, I supported the business' marketing efforts by creating impactful online content, such as landing pages, product websites, and effective email automation. When Pentametrix merged with Welii in 2021, I seized the opportunity to join Welii's development team, where I continue to utilize my skills and expertise.",
+      "welii": "During my time at Welii (previously known as LamMovil), I initially worked as a Community Manager. However, as the company evolved and recognized the need for web-based initiatives and paid media, I quickly adapted and began developing websites. Over the course of five years, I leveraged my expertise in WordPress to design and develop a number of websites and landing pages. To create unique user experiences, I frequently employed JavaScript to customize site functionality."
+    },
+    "education": {
+      "title": "Education",
+      "unc": {
+        "line": "Communication Sciences Bachelor's - Incomplete"
+      }
+    }
+  },
+  "back": "Back",
+  "intro": {
+    "download": "Download",
+    "more": "See more"
+  }
+}

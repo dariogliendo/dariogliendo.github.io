@@ -1,0 +1,48 @@
+{
+  "cv": {
+    "interests": {
+      "title": "Intereses",
+      "videogames": "Videojuegos",
+      "boardgames": "Juegos de mesa",
+      "tv": "Television y cine",
+      "coding": "Programación",
+      "music": "Música"
+    },
+    "projectsTitle": "Proyectos",
+    "projects": {
+      "website": {
+        "title": "Este sitio!",
+        "description": "Lee el código de este sitio en GitHub"
+      },
+      "pytimeline": {
+        "title": "PyTimeline",
+        "description": "En PyCamp 2023, un campamento de 3 días para desarrolladores Python, colaboré en el desarrollo de esta adaptación del juego de mesa \"Timeline\""
+      }
+    },
+    "aboutMe": {
+      "title": "¿Quién soy?",
+      "text": "Soy Darío Liendo, un desarrollador fullstack de Córdoba, Argentina. Trabajo en la industria del software desde el año 2015. En principio, trabajé mayoritariamente en diseño web, usando WordPress y haciendo algunas funcionalidades básicas con JavaScript, principalmente acompañando al equipo de marketing.\n Pasados unos años, empecé a alejarme del mundo del marketing y empecé a sentirme más y más atraído al desarrollo de software, y así empecé a indagar más profundamente en JavaScript, frameworks, y finalmente desarrollo backend. Hoy, llevo alrededor de cinco años desarrollando aplicaciones web y estoy listo para avanzar algunos pasos en mi carrera."
+    },
+    "emailMeButton": "Envíame un correo",
+    "technology": "Tecnología",
+    "workExperience": {
+      "title": "Experiencia",
+      "now": "ahora",
+      "woxi": "Durante el tiempo que llevo en Woxi obtuve una valiosa experiencia trabajando con varios frameworks. Inicialmente, trabajé extensivamente con <strong>AngularJS</strong> hasta que realizamos la transición a <strong>VueJS</strong>. Mi conocimiento de estos frameworks me ha permitido desarrollar y mantener aplicaciones web complejas.<br /> Además, tuve la oportunidad de expandir mis habilidades gracias a trabajar con herramientas server-side como <strong>NodeJS</strong> y <strong>MongoDB</strong>, marcando el camino a una comprensión extensiva del campo del software.",
+      "communicationsSpecialist": "Especialista en Comunicaciones",
+      "pentametrix": "En Pentametrix mi trabajo era apoyar las estrategias de marketing creando contenido web tal como lading pages, sitios de producto y automatización de emails. Cuando Pentametrix y Woxi se fusionaron en 2021, aproveché la oportunidad de unirme al equipo de desarrollo de la nueva empresa, donde aún aporto mis conocimientos.",
+      "welii": "Durante mi paso por Welii (anteriormente LamMovil) trabajé inicalmente como Community manager. Sin embargo, cuando la compañía evolucionó y reconoció su necesidad de adoptar estrategias web y paid-media, rápidamente adapté mi trabajo y comencé a desarrollar sitios web. Durante el curso de mis 5 años en la empresa, aprendé intensivamente WordPress y diseñé y desarrollé numerosos sitios web y landing pages. Con el fin de crear experiencias de usuario satisfactorias, aprendí a usar JavaScript para personalizar el funcionamiento de los sitios."
+    },
+    "education": {
+      "title": "Educación",
+      "unc": {
+        "line": "Licenciatura en Ciencias de la Comunicación - Incompleta"
+      }
+    }
+  },
+  "back": "Atras",
+  "intro": {
+    "download": "Descargar",
+    "more": "Ver más"
+  }
+}
