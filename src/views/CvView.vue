@@ -1,9 +1,12 @@
 <script setup lang="ts">
+import { ref } from 'vue';
 import TechGrid from '../components/TechGrid.vue';
 import type { TechData } from '../components/TechCard.vue';
-import { NIcon, NButton } from 'naive-ui'
-import { Games16Regular, BoardGames20Regular, MoviesAndTv16Regular, Code16Regular, MusicNote216Regular } from '@vicons/fluent'
-import { Github, Linkedin } from '@vicons/fa'
+import { NIcon, NButton, NCollapseTransition } from 'naive-ui'
+import { Github, Linkedin, ChevronDown } from '@vicons/fa'
+import SideInfo from '@/components/SideInfo.vue';
+
+const showSideInfo = ref<boolean>(false)
 
 const tech: TechData[] = [
   {
@@ -76,32 +79,26 @@ const tech: TechData[] = [
 <template>
   <div class="main-wrapper">
     <div class="flex-wrapper">
+      <div class="mobile-header">
+        <div class="profile-area">
+          <img src="/prof_resume_intro.jpg" alt="" class="profile">
+          <section class="name">
+            <h1 class="main-name">Darío Liendo</h1>
+            <h3>Fullstack Developer</h3>
+          </section>
+        </div>
+        <div class="toggleSide" @click="showSideInfo = !showSideInfo">
+          <a>{{ $t('showMore') }}</a>
+          <n-icon :component="ChevronDown" :class="{rotate: showSideInfo}"></n-icon>
+        </div>
+        <n-collapse-transition :show="showSideInfo">
+          <side-info></side-info>
+        </n-collapse-transition>
+      </div>
       <div class="left-column">
         <img src="/prof_resume_intro.jpg" alt="profile photo">
-        <div class="content">
-          <section id="interests">
-            <h3>{{ $t('cv.interests.title') }}</h3>
-            <div class="interests">
-              <n-icon :component="Games16Regular" :title="$t('cv.interests.videogames')" :size="32"></n-icon>
-              <n-icon :component="BoardGames20Regular" :title="$t('cv.interests.boardgames')" :size="32"></n-icon>
-              <n-icon :component="MoviesAndTv16Regular" :title="$t('cv.interests.tv')" :size="32"></n-icon>
-              <n-icon :component="Code16Regular" :title="$t('cv.interests.coding')" :size="32"></n-icon>
-              <n-icon :component="MusicNote216Regular" :title="$t('cv.interests.music')" :size="32"></n-icon>
-            </div>
-          </section>
-          <section id="projects">
-            <h3>{{ $t('cv.projectsTitle') }}</h3>
-            <div class="proj-card">
-              <a href="https://github.com/dariogliendo/vue_cv2023" target="_blank">{{ $t('cv.projects.website.title')
-              }}</a>
-              <span>{{ $t('cv.projects.website.description') }}</span>
-            </div>
-            <div class="proj-card">
-              <a href="https://github.com/cacrespo/pytimeline" target="_blank">{{ $t('cv.projects.pytimeline.title')
-              }}</a>
-              <span>{{ $t('cv.projects.pytimeline.description') }}</span>
-            </div>
-          </section>
+        <div class="side-wrapper">
+          <side-info></side-info>
         </div>
       </div>
       <div class="main-column">
@@ -155,7 +152,7 @@ const tech: TechData[] = [
               <span class="subline">{{ $t('cv.workExperience.communicationsSpecialist') }}</span>
             </div>
             <p>
-              {{$t('cv.workExperience.welii')}}
+              {{ $t('cv.workExperience.welii') }}
             </p>
           </div>
         </section>
@@ -176,6 +173,7 @@ const tech: TechData[] = [
   * {
     &::-webkit-scrollbar {
       width: 8px;
+      background-color: var(--color-background-mute);
     }
 
     &::-webkit-scrollbar-thumb {
@@ -204,52 +202,26 @@ const tech: TechData[] = [
       padding: 21px;
     }
 
+    .mobile-header {
+      display: none;
+    }
+
     .left-column {
       flex: 1;
       display: flex;
       flex-direction: column;
       background-color: var(--color-background-mute);
+      max-width: 260px;
 
       img {
-        height: 250px;
+        height: 40vh;
         object-fit: cover;
         object-position: 0 -5px;
-      }
-
-      .content {
-        padding: 12px;
-        gap: 24px;
-        display: flex;
-        flex-direction: column;
-        overflow-y: auto;
-
-        section {
-          display: flex;
-          flex-direction: column;
-          gap: 12px;
-
-          &#projects {
-            .proj-card {
-              display: flex;
-              flex-direction: column;
-
-              span {
-                font-size: 0.8em;
-              }
-            }
-          }
-        }
-
-        .interests {
-          display: flex;
-          flex-direction: row;
-          gap: 16px;
-        }
-      }
-
-
-      img {
         width: 100%;
+      }
+
+      .side-wrapper {
+        padding: 12px;
       }
     }
 
@@ -328,6 +300,59 @@ const tech: TechData[] = [
       width: 100vw;
       max-width: 100vw;
       max-height: 100vh;
+      flex-direction: column;
+      border-radius: 0;
+      overflow-y: auto;
+
+      .mobile-header {
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid var(--primary-color);
+        background-color: var(--color-background-mute);
+        padding: 12px;
+        gap: 12px;
+        align-items: center;
+
+        .toggleSide {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          cursor: pointer;
+
+          i {
+            color: var(--primary-color);
+            transition: transform .2s ease;
+
+            &.rotate {
+              transform: rotate(180deg)
+            }
+          }
+        }
+
+        .profile-area {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          .name {
+            text-align: center;
+
+            h1 {
+              color: var(--primary-color)
+            }
+          }
+
+          img.profile {
+            padding: 4px;
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            object-position: top;
+            border-radius: 60px;
+            border: 1px solid var(--primary-color)
+          }
+        }
+      }
 
       .left-column {
         display: none;
@@ -335,8 +360,12 @@ const tech: TechData[] = [
 
       .main-column {
         padding-top: 50px;
+        overflow-y: unset;
+
+        .name {
+          display: none;
+        }
       }
     }
   }
-}
-</style>
+}</style>

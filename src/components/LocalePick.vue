@@ -6,8 +6,8 @@ const store = useGlobalStore()
 <template>
 <div class="flag">
   <transition mode="out-in">
-    <img src="/es.svg" alt="Español" title="English" @click="store.setLocale('es')" v-if="store.locale === 'en'">
-    <img src="/gb.svg" alt="English" title="Spanish" @click="store.setLocale('en')" v-else>
+    <img src="/es.svg" alt="English" title="English" @click="store.setLocale('es')" v-if="store.locale === 'en'">
+    <img src="/gb.svg" alt="Español" title="Spanish" @click="store.setLocale('en')" v-else>
   </transition>
 </div>
 </template>
