@@ -216,7 +216,7 @@ const tech: TechData[] = [
       img {
         height: 40vh;
         object-fit: cover;
-        object-position: 0 -5px;
+        object-position: 50% -5px;
         width: 100%;
       }
 
