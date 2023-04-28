@@ -100,7 +100,7 @@ import TechIcon from '../components/TechIcon.vue';
     flex: 1;
     background-image: url('/prof_resume_intro.jpg');
     background-size: cover;
-    
+    background-position-x: center;
   }
 
   .tech {
