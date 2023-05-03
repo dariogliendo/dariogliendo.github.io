@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useGlobalStore } from '../stores/global'
+const store = useGlobalStore()
 import { NButton } from 'naive-ui'
 import TechIcon from '../components/TechIcon.vue';
 </script>
@@ -13,7 +15,9 @@ import TechIcon from '../components/TechIcon.vue';
             <h3>Fullstack Developer</h3>
           </div>
           <div class="buttons">
-            <n-button type="default">{{ $t('intro.download') }}</n-button>
+            <a target="_blank" href="/Dario-Liendo-english.pdf" v-if="store.locale === 'en'">
+              <n-button type="default">{{ $t('intro.download') }}</n-button>
+            </a>
             <n-button type="primary" @click="$router.push('/cv')">{{ $t('intro.more') }}</n-button>
           </div>
           <div class="tech">
@@ -38,7 +42,6 @@ import TechIcon from '../components/TechIcon.vue';
   </div>
 </template>
 <style scoped lang="less">
-
 .full-height {
   height: 100%;
   display: flex;
@@ -46,6 +49,7 @@ import TechIcon from '../components/TechIcon.vue';
   width: 100%;
   justify-content: center;
 }
+
 .mainWrapper {
   height: 70vh;
   width: 100%;
@@ -121,7 +125,7 @@ import TechIcon from '../components/TechIcon.vue';
   }
 
   .photo {
-    display: none;  
+    display: none;
   }
 }
 </style>

@@ -221,6 +221,7 @@ const tech: TechData[] = [
       }
 
       .side-wrapper {
+        overflow-y: auto;
         padding: 12px;
       }
     }
