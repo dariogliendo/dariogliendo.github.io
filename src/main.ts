@@ -5,6 +5,7 @@ import 'vfonts/FiraCode.css'
 import { createI18n } from 'vue-i18n'
 import en from './locales/en.json'
 import es from './locales/es.json'
+import VueGtag from 'vue-gtag';
 
 import App from './App.vue'
 import router from './router'
@@ -24,5 +25,8 @@ const app = createApp(App)
 app.use(createPinia())
 app.use(router)
 app.use(i18n)
+app.use(VueGtag, {
+  config: {id: "G-7Q98LJ79GN"}
+}, router)
 
 app.mount('#app')
