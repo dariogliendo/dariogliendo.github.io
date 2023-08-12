@@ -73,7 +73,13 @@ const tech: TechData[] = [
     name: 'JQuery',
     skill: 5,
     description: ''
-  }
+  },
+  {
+    name: 'ExpressJS',
+    skill: 5,
+    description: ''
+  },
+  
 ]
 </script>
 <template>
