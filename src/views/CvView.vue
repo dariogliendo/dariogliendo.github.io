@@ -87,7 +87,7 @@ const tech: TechData[] = [
     <div class="flex-wrapper">
       <div class="mobile-header">
         <div class="profile-area">
-          <img src="/prof_resume_intro.jpg" alt="" class="profile">
+          <img src="/profile.jpg" alt="" class="profile">
           <section class="name">
             <h1 class="main-name">Darío Liendo</h1>
             <h3>Fullstack Developer</h3>
@@ -102,7 +102,7 @@ const tech: TechData[] = [
         </n-collapse-transition>
       </div>
       <div class="left-column">
-        <img src="/prof_resume_intro.jpg" alt="profile photo">
+        <img src="/profile.jpg" alt="profile photo">
         <div class="side-wrapper">
           <side-info></side-info>
         </div>
