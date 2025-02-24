@@ -4,6 +4,8 @@ import { darkTheme, lightTheme } from 'naive-ui'
 import type { GlobalTheme } from 'naive-ui'
 import { useI18n } from 'vue-i18n'
 
+export type locale = 'en' | 'es'
+
 export const useGlobalStore = defineStore('theme', () => {
   const i18n = useI18n()
   const naiveTheme = ref<GlobalTheme>(darkTheme)
@@ -16,6 +18,10 @@ export const useGlobalStore = defineStore('theme', () => {
     localStorage.setItem('localePreference', val)
   }
 
+  function getLocale() : locale {
+    return `${i18n.locale.value}` as locale
+  }
+
 
   const setTheme: setThemeFn = (val) => {
     if (val === 'light') naiveTheme.value = lightTheme
@@ -25,5 +31,5 @@ export const useGlobalStore = defineStore('theme', () => {
     document.documentElement.setAttribute('data-theme', val)
     localStorage.setItem('themePreference', val)
   }
-  return { naiveTheme, stringTheme, setTheme, locale, setLocale }
+  return { naiveTheme, stringTheme, setTheme, locale, setLocale, getLocale }
 })

@@ -1,0 +1,77 @@
+[
+  {
+    "name": "JavaScript",
+    "skill": 5,
+    "description": ""
+  },
+  {
+    "name": "NodeJS",
+    "skill": 5,
+    "description": ""
+  },
+  {
+    "name": "TypeScript",
+    "skill": 4,
+    "description": ""
+  },
+  {
+    "name": "MongoDB",
+    "skill": 5,
+    "description": ""
+  },
+  {
+    "name": "VueJS",
+    "skill": 4,
+    "description": ""
+  },
+  {
+    "name": "ReactJS",
+    "skill": 3,
+    "description": ""
+  },
+  {
+    "name": "AngularJS",
+    "skill": 5,
+    "description": ""
+  },
+  {
+    "name": "Python",
+    "skill": 3,
+    "description": ""
+  },
+  {
+    "name": "Git",
+    "skill": 5,
+    "description": ""
+  },
+  {
+    "name": "Jest",
+    "skill": 3,
+    "description": ""
+  },
+  {
+    "name": "WordPress",
+    "skill": 5,
+    "description": ""
+  },
+  {
+    "name": "Less",
+    "skill": 5,
+    "description": ""
+  },
+  {
+    "name": "JQuery",
+    "skill": 5,
+    "description": ""
+  },
+  {
+    "name": "ExpressJS",
+    "skill": 5,
+    "description": ""
+  },
+  {
+    "name": "NestJS",
+    "skill": 5,
+    "description": ""
+  }
+]

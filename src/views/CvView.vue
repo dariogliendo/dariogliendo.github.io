@@ -1,108 +1,43 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-import TechGrid from '../components/TechGrid.vue';
-import type { TechData } from '../components/TechCard.vue';
-import { NIcon, NButton, NCollapseTransition } from 'naive-ui'
-import { Github, Linkedin, ChevronDown } from '@vicons/fa'
-import SideInfo from '@/components/SideInfo.vue';
+import { ref } from "vue";
+import TechGrid from "../components/TechGrid.vue";
+import type { TechData } from "../components/TechCard.vue";
+import { NIcon, NButton, NCollapseTransition } from "naive-ui";
+import { Github, Linkedin, ChevronDown } from "@vicons/fa";
+import SideInfo from "@/components/SideInfo.vue";
+import workExperience from "@/content/workExperience.json";
+import techContent from "@/content/tech.json";
+import { useGlobalStore } from "@/stores/global";
+const globalStore = useGlobalStore();
 
-const showSideInfo = ref<boolean>(false)
+const showSideInfo = ref<boolean>(false);
 
-const tech: TechData[] = [
-  {
-    name: 'JavaScript',
-    skill: 5,
-    description: ''
-  },
-  {
-    name: 'NodeJS',
-    skill: 5,
-    description: ''
-  },
-  {
-    name: 'TypeScript',
-    skill: 4,
-    description: ''
-  },
-  {
-    name: 'MongoDB',
-    skill: 5,
-    description: ''
-  },
-  {
-    name: 'VueJS',
-    skill: 4,
-    description: ''
-  },
-  {
-    name: 'ReactJS',
-    skill: 3,
-    description: ''
-  },
-  {
-    name: 'AngularJS',
-    skill: 5,
-    description: ''
-  },
-  {
-    name: 'Python',
-    skill: 3,
-    description: '',
-  },
-  {
-    name: 'Git',
-    skill: 5,
-    description: ''
-  },
-  {
-    name: 'Jest',
-    skill: 3,
-    description: '',
-  },
-  {
-    name: 'WordPress',
-    skill: 5,
-    description: ''
-  },
-  {
-    name: 'Less',
-    skill: 5,
-    description: ''
-  },
-  {
-    name: 'JQuery',
-    skill: 5,
-    description: ''
-  },
-  {
-    name: 'ExpressJS',
-    skill: 5,
-    description: ''
-  },
-  
-]
+const tech: TechData[] = techContent as TechData[];
 </script>
 <template>
   <div class="main-wrapper">
     <div class="flex-wrapper">
       <div class="mobile-header">
         <div class="profile-area">
-          <img src="/profile.jpg" alt="" class="profile">
+          <img src="/profile.jpg" alt="" class="profile" />
           <section class="name">
             <h1 class="main-name">Darío Liendo</h1>
             <h3>Fullstack Developer</h3>
           </section>
         </div>
         <div class="toggleSide" @click="showSideInfo = !showSideInfo">
-          <a>{{ $t('showMore') }}</a>
-          <n-icon :component="ChevronDown" :class="{rotate: showSideInfo}"></n-icon>
+          <a>{{ $t("showMore") }}</a>
+          <n-icon
+            :component="ChevronDown"
+            :class="{ rotate: showSideInfo }"
+          ></n-icon>
         </div>
         <n-collapse-transition :show="showSideInfo">
           <side-info></side-info>
         </n-collapse-transition>
       </div>
       <div class="left-column">
-        <img src="/profile.jpg" alt="profile photo">
+        <img src="/profile.jpg" alt="profile photo" />
         <div class="side-wrapper">
           <side-info></side-info>
         </div>
@@ -113,60 +48,49 @@ const tech: TechData[] = [
           <h3>Fullstack Developer</h3>
         </section>
         <section class="about-me">
-          <h2>{{ $t('cv.aboutMe.title') }}</h2>
+          <h2>{{ $t("cv.aboutMe.title") }}</h2>
           <p>
-            {{ $t('cv.aboutMe.text') }}
+            {{ $t("cv.aboutMe.text") }}
           </p>
         </section>
         <section id="social">
           <a href="https://github.com/dariogliendo" target="_blank">
             <n-icon :component="Github" :size="32"></n-icon>
           </a>
-          <a href="https://www.linkedin.com/in/dario-liendo-b2a726b4/" target="_blank">
+          <a
+            href="https://www.linkedin.com/in/dario-liendo-b2a726b4/"
+            target="_blank"
+          >
             <n-icon :component="Linkedin" :size="32"></n-icon>
           </a>
           <a href="mailto:dario.liendo@gmail.com" id="email">
-            <n-button :type="'primary'">{{ $t('cv.emailMeButton') }}</n-button>
+            <n-button :type="'primary'">{{ $t("cv.emailMeButton") }}</n-button>
           </a>
         </section>
         <section class="technology">
-          <h2>{{ $t('cv.technology') }}</h2>
+          <h2>{{ $t("cv.technology") }}</h2>
           <TechGrid :data="tech" />
         </section>
         <section id="experience">
-          <h2>{{ $t('cv.workExperience.title') }}</h2>
-          <div class="data-card">
+          <h2>{{ $t("cv.workExperience.title") }}</h2>
+          <div class="data-card" v-for="item in workExperience">
             <div class="heading-line">
-              <h3>Woxi - (2021 - {{ $t('cv.workExperience.now') }})</h3>
-              <span class="subline">Fullstack Developer</span>
+              <h3>
+                {{ item.companyName }} - ({{ item.startDate }} -
+                {{ item.endDate || $t("cv.workExperience.now") }})
+              </h3>
+              <span class="subline">{{
+                item.role.locales[globalStore.getLocale()]
+              }}</span>
             </div>
-            <div v-html="$t('cv.workExperience.woxi')">
-            </div>
-          </div>
-          <div class="data-card">
-            <div class="heading-line">
-              <h3>Pentametrix - (2018 - 2021)</h3>
-              <span class="subline">{{ $t('cv.workExperience.communicationsSpecialist') }}</span>
-            </div>
-            <p>
-              {{ $t('cv.workExperience.pentametrix') }}
-            </p>
-          </div>
-          <div class="data-card">
-            <div class="heading-line">
-              <h3>Welii / LamMovil - (2015 - 2021)</h3>
-              <span class="subline">{{ $t('cv.workExperience.communicationsSpecialist') }}</span>
-            </div>
-            <p>
-              {{ $t('cv.workExperience.welii') }}
-            </p>
+            <p>{{ item.description.locales[globalStore.getLocale()] }}</p>
           </div>
         </section>
         <section class="edu">
-          <h2>{{ $t('cv.education.title') }}</h2>
+          <h2>{{ $t("cv.education.title") }}</h2>
           <div class="data-card">
             <h3>Universidad Nacional de Córdoba (2012 - 2019)</h3>
-            <span class="subline">{{ $t('cv.education.unc.line') }}</span>
+            <span class="subline">{{ $t("cv.education.unc.line") }}</span>
           </div>
         </section>
       </div>
@@ -175,7 +99,6 @@ const tech: TechData[] = [
 </template>
 <style lang="less">
 .main-wrapper {
-
   * {
     &::-webkit-scrollbar {
       width: 8px;
@@ -297,7 +220,6 @@ const tech: TechData[] = [
       }
     }
   }
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -328,10 +250,10 @@ const tech: TechData[] = [
 
           i {
             color: var(--primary-color);
-            transition: transform .2s ease;
+            transition: transform 0.2s ease;
 
             &.rotate {
-              transform: rotate(180deg)
+              transform: rotate(180deg);
             }
           }
         }
@@ -345,7 +267,7 @@ const tech: TechData[] = [
             text-align: center;
 
             h1 {
-              color: var(--primary-color)
+              color: var(--primary-color);
             }
           }
 
@@ -356,7 +278,7 @@ const tech: TechData[] = [
             object-fit: cover;
             object-position: top;
             border-radius: 60px;
-            border: 1px solid var(--primary-color)
+            border: 1px solid var(--primary-color);
           }
         }
       }
@@ -375,4 +297,5 @@ const tech: TechData[] = [
       }
     }
   }
-}</style>
+}
+</style>

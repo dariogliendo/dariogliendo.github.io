@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { useGlobalStore } from '../stores/global'
-const store = useGlobalStore()
-import { NButton } from 'naive-ui'
-import TechIcon from '../components/TechIcon.vue';
+import { useGlobalStore } from "../stores/global";
+const store = useGlobalStore();
+import { NButton } from "naive-ui";
+import TechIcon from "../components/TechIcon.vue";
+import techData from "@/content/tech.json";
 </script>
 <template>
   <div class="full-height">
@@ -15,25 +16,22 @@ import TechIcon from '../components/TechIcon.vue';
             <h3>Fullstack Developer</h3>
           </div>
           <div class="buttons">
-            <a target="_blank" href="/Dario-Liendo-english.pdf" v-if="store.locale === 'en'">
-              <n-button type="default">{{ $t('intro.download') }}</n-button>
+            <a
+              target="_blank"
+              href="/Dario Liendo - Software Developer [2025].pdf"
+              v-if="store.locale === 'en'"
+            >
+              <n-button type="default">{{ $t("intro.download") }}</n-button>
             </a>
-            <n-button type="primary" @click="$router.push('/cv')">{{ $t('intro.more') }}</n-button>
+            <n-button type="primary" @click="$router.push('/cv')">{{
+              $t("intro.more")
+            }}</n-button>
           </div>
           <div class="tech">
-            <tech-icon tech="javascript" />
-            <tech-icon tech="typescript" />
-            <tech-icon tech="python" />
-            <tech-icon tech="vuejs" />
-            <tech-icon tech="reactjs" />
-            <tech-icon tech="nodejs" />
-            <tech-icon tech="angularjs" />
-            <tech-icon tech="git" />
-            <tech-icon tech="jest" />
-            <tech-icon tech="mongodb" />
-            <tech-icon tech="wordpress" />
-            <tech-icon tech="jquery" />
-            <tech-icon tech="less" />
+            <tech-icon
+              v-for="tech in techData"
+              :tech="tech.name.toLocaleLowerCase()"
+            />
           </div>
         </div>
       </div>
@@ -64,7 +62,7 @@ import TechIcon from '../components/TechIcon.vue';
     padding: 2em;
     display: grid;
     place-content: center;
-    background-image: url('/introbg.jpg');
+    background-image: url("/introbg.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -88,7 +86,7 @@ import TechIcon from '../components/TechIcon.vue';
       h1 {
         font-size: 4em;
         line-height: 1em;
-        color: var(--primary-color)
+        color: var(--primary-color);
       }
 
       .buttons {
@@ -102,7 +100,7 @@ import TechIcon from '../components/TechIcon.vue';
 
   .photo {
     flex: 1;
-    background-image: url('/profile.jpg');
+    background-image: url("/profile.jpg");
     background-size: cover;
     background-position-x: center;
   }

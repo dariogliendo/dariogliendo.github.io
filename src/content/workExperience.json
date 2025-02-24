@@ -1,0 +1,68 @@
+[
+  {
+    "companyName": "Globant",
+    "role": {
+      "locales": {
+        "en": "NodeJS Developer",
+        "es": "Desarrollador NodeJS"
+      }
+    },
+    "description": {
+      "locales": {
+        "en": "At Globant I work as a NodeJS developer for a banking account. Globant is a challenge both in the technical side and in the soft skills side, as I have to work within a complex corporate environment and with a large team. I have learned a lot about the banking industry and how to work with a large team, and I have improved my backend skills significantly.",
+        "es": "En Globant trabajo como desarrollador NodeJS para una cuenta bancaria. Globant es un desafío tanto en el lado técnico como en el lado de las habilidades blandas, ya que tengo que trabajar dentro de un entorno corporativo complejo y con un gran equipo. He aprendido mucho sobre la industria bancaria y cómo trabajar con un gran equipo, y he mejorado significativamente mis habilidades de backend."
+      }},
+    "startDate": 2024
+  },
+  {
+    "companyName": "Woxi",
+    "role": {
+      "locales": {
+        "es": "Desarrollador Fullstack",
+        "en": "Fullstack Developer"
+      }
+    },
+    "startDate": 2021,
+    "endDate": 2024,
+    "description": {
+      "locales": {
+        "es": "Durante mi tiempo en Woxi obtuve una valiosa experiencia trabajando con varios frameworks. Inicialmente, trabajé extensivamente con <strong>AngularJS</strong> hasta que realizamos la transición a <strong>VueJS</strong>. Mi conocimiento de estos frameworks me ha permitido desarrollar y mantener aplicaciones web complejas.<br /> Además, tuve la oportunidad de expandir mis habilidades gracias a trabajar con herramientas server-side como <strong>NodeJS</strong> y <strong>MongoDB</strong>, marcando el camino a una comprensión extensiva del campo del software.",
+        "en": "During my time at Woxi, I gained valuable experience working with various frameworks. Initially, I worked extensively with <strong>AngularJS</strong> before transitioning to <strong>VueJS</strong>, which has been my go-to framework since then. My expertise with these frameworks allowed me to effectively develop and maintain complex web applications.<br /> Moreover, I had the opportunity to expand my skill set by working with server-side tools like <strong>NodeJS</strong> and <strong>MongoDB</strong>, leading to a more complete understanding of the whole field."
+      }
+    }
+  },
+  {
+    "companyName": "Pentametrix",
+    "role": {
+      "locales": {
+        "es": "Especialista en Comunicaciones",
+        "en": "Communications Specialist"
+      }
+    },
+    "startDate": 2018,
+    "endDate": 2021,
+    "description": {
+      "locales": {
+        "es": "En Pentametrix mi trabajo era apoyar las estrategias de marketing creando contenido web tal como lading pages, sitios de producto y automatización de emails. Cuando Pentametrix y Woxi se fusionaron en 2021, aproveché la oportunidad de unirme al equipo de desarrollo de la nueva empresa, donde aún aporto mis conocimientos.",
+        "en": "At Pentametrix, I supported the business' marketing efforts by creating impactful online content, such as landing pages, product websites, and effective email automation. When Pentametrix merged with Welii in 2021, I seized the opportunity to join Welii's development team, where I continue to utilize my skills and expertise."
+      }
+    }
+  },
+  {
+    "companyName": "Welii / LamMovil",
+    "role": {
+      "locales": {
+        "es": "Especialista en Comunicaciones",
+        "en": "Communications Specialist"
+      }
+    },
+    "startDate": 2015,
+    "endDate": 2021,
+    "description": {
+      "locales": {
+        "es": "Durante mi paso por Welii (anteriormente LamMovil) trabajé inicalmente como Community manager. Sin embargo, cuando la compañía evolucionó y reconoció su necesidad de adoptar estrategias web y paid-media, rápidamente adapté mi trabajo y comencé a desarrollar sitios web. Durante el curso de mis 5 años en la empresa, aprendé intensivamente WordPress y diseñé y desarrollé numerosos sitios web y landing pages. Con el fin de crear experiencias de usuario satisfactorias, aprendí a usar JavaScript para personalizar el funcionamiento de los sitios.",
+        "en": "During my time at Welii (previously known as LamMovil), I initially worked as a Community Manager. However, as the company evolved and recognized the need for web-based initiatives and paid media, I quickly adapted and began developing websites. Over the course of five years, I leveraged my expertise in WordPress to design and develop a number of websites and landing pages. To create unique user experiences, I frequently employed JavaScript to customize site functionality."
+      }
+    }
+  }
+]
