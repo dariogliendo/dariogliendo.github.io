@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { computed, ref } from "vue";
 import TechGrid from "../components/TechGrid.vue";
 import type { TechData } from "../components/TechCard.vue";
 import { NIcon, NButton, NCollapseTransition } from "naive-ui";
@@ -13,6 +13,14 @@ const globalStore = useGlobalStore();
 const showSideInfo = ref<boolean>(false);
 
 const tech: TechData[] = techContent as TechData[];
+
+const sortedWorkExperience = computed(() =>
+  workExperience.sort((a, b) => {
+    if (a.startDate > b.startDate) return -1;
+    if (a.startDate < b.startDate) return 1;
+    return 0;
+  })
+);
 </script>
 <template>
   <div class="main-wrapper">
@@ -73,7 +81,7 @@ const tech: TechData[] = techContent as TechData[];
         </section>
         <section id="experience">
           <h2>{{ $t("cv.workExperience.title") }}</h2>
-          <div class="data-card" v-for="item in workExperience">
+          <div class="data-card" v-for="item in sortedWorkExperience">
             <div class="heading-line">
               <h3>
                 {{ item.companyName }} - ({{ item.startDate }} -

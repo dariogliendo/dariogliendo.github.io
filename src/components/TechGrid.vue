@@ -1,15 +1,21 @@
 <script setup lang="ts">
-import TechCard from './TechCard.vue';
-import type { TechData } from './TechCard.vue';
+import { computed } from "vue";
+import TechCard from "./TechCard.vue";
+import type { TechData } from "./TechCard.vue";
 
 const props = defineProps<{
-  data: TechData[]
-}>()
-
+  data: TechData[];
+}>();
 </script>
 <template>
   <div class="tech-grid">
-    <TechCard v-for="(item, index) of data" :key="index" :name="item.name" :skill="item.skill" :description="item.description"/>
+    <TechCard
+      v-for="(item, index) of data"
+      :key="index"
+      :name="item.name"
+      :skill="item.skill"
+      :description="item.description"
+    />
   </div>
 </template>
 <style lang="less" scoped>
