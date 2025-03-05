@@ -91,7 +91,7 @@ const sortedWorkExperience = computed(() =>
                 item.role.locales[globalStore.getLocale()]
               }}</span>
             </div>
-            <p>{{ item.description.locales[globalStore.getLocale()] }}</p>
+            <p v-html="item.description.locales[globalStore.getLocale()]"></p>
           </div>
         </section>
         <section class="edu">
